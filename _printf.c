@@ -2,16 +2,17 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-int _printf(const char *format,...)
+int _printf(const char *format, ...)
 {
 	va_list arg;
 	char *str;
 	const char *reader;
-	int index;
+	int index, count;
 
 	va_start(arg, format);
 	reader = format;
-	while(*reader != '\0')
+	count = 0;
+	while (*reader != '\0')
 	{
 		if (*reader != '%')
 		{
@@ -24,26 +25,27 @@ int _printf(const char *format,...)
 			{
 				switch (*reader)
 				{
-					case 's':
-						str = va_arg(arg, char *);
-						while (*str != '\0')
-						{
-							putchar(*str);
-							str++;
-						}
-						break;
-					case 'c':
-						index = va_arg(arg, int);
-						putchar(index);
-						break;
-					case '%':
-						putchar('%');
-						break;
+				case 's':
+					str = va_arg(arg, char *);
+					while (*str != '\0')
+					{
+						putchar(*str);
+						str++;
+					}
+					break;
+				case 'c':
+					index = va_arg(arg, int);
+					putchar(index);
+					break;
+				case '%':
+					putchar('%');
+					break;
 				}
 			}
 		}
+		count++;
 	reader++;
 	}
 	va_end(arg);
-	return (0);
+	return (count);
 }
