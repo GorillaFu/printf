@@ -2,6 +2,12 @@
 #include <stdarg.h>
 #include <stdio.h>
 
+
+/**
+ * _printf - prints arguments
+ * @format: arguments to be printed
+ * Return: number of chars
+ */
 int _printf(const char *format, ...)
 {
 	va_list arg;
