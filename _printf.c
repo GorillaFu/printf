@@ -40,5 +40,6 @@ int _printf(const char *format,...)
 		}
 	reader++;
 	}
+	va_end(arg);
 	return (0);
 }
