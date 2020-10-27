@@ -26,7 +26,11 @@ int _printf(const char *format,...)
 				{
 					case 's':
 						str = va_arg(arg, char *);
-						puts(str);
+						while (*str != '\0')
+						{
+							putchar(*str);
+							str++;
+						}
 						break;
 					case 'c':
 						index = va_arg(arg, int);
