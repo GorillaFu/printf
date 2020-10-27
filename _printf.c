@@ -31,7 +31,9 @@ int _printf(const char *format, ...)
 					{
 						putchar(*str);
 						str++;
+						count++;
 					}
+					count--;
 					break;
 				case 'c':
 					index = va_arg(arg, int);
@@ -47,5 +49,5 @@ int _printf(const char *format, ...)
 	reader++;
 	}
 	va_end(arg);
-	return (count);
+	return (count - 1);
 }
