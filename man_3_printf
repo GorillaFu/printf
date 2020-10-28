@@ -1,0 +1,16 @@
+
+
+------------------------Printf Function Man Page------------------------------
+_printf(const char *format) function implementation takes argumetns in a 
+ariadic function with the paramerter *format and prints the respected:
+
+	%c: char
+	%s: strings
+	%f: floats
+	%d:
+	%i: signed decimal integer
+	%%: special characters
+
+_printf moves through the arguments until equal to NULL or a '%' char
+where if '%' it will check the next character if not null it will print normal
+
