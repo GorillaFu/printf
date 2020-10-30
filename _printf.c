@@ -2,7 +2,13 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-int _printf(const char *format,...)
+/**
+ * _printf - print anything
+ * @format: to be printed
+ * Return: length of string printed
+ */
+
+int _printf(const char *format, ...)
 {
 	va_list arg;
 	int count;
